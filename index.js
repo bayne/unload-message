@@ -1,7 +1,7 @@
-var jquery = require('jquery');
+var $ = require('jquery');
 
 module.exports = function (confirmationMessage) {
-    jquery.ready(function() {
+    $(function() {
         // We do not want this warning to trigger if the user is submitting a form
         var formSubmitting = false;
 
@@ -13,19 +13,17 @@ module.exports = function (confirmationMessage) {
          * Logic for this from:
          * http://stackoverflow.com/questions/7317273/warn-user-before-leaving-web-page-with-unsaved-changes
          */
-        window.onload = function() {
-            window.beforeUnloadListener = function (e) {
-                if (formSubmitting) {
-                    return undefined;
-                }
+        window.beforeUnloadListener = function (e) {
+            if (formSubmitting) {
+                return undefined;
+            }
 
-                // Gecko + IE
-                (e || window.event).returnValue = confirmationMessage;
+            // Gecko + IE
+            (e || window.event).returnValue = confirmationMessage;
 
-                // Gecko + Webkit, Safari, Chrome etc.
-                return confirmationMessage;
-            };
-            window.addEventListener("beforeunload", window.beforeUnloadListener);
+            // Gecko + Webkit, Safari, Chrome etc.
+            return confirmationMessage;
         };
+        window.addEventListener("beforeunload", window.beforeUnloadListener);
     });
 };
