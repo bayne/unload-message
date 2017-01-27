@@ -1,0 +1,27 @@
+{
+  "name": "unload-message",
+  "version": "1.0.0",
+  "description": "Adds an alert to appear on the page unload",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bayne/unload-message.git"
+  },
+  "keywords": [
+    "unload",
+    "alert",
+    "message"
+  ],
+  "author": "Brian Payne <bpayne@uci.edu>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bayne/unload-message/issues"
+  },
+  "homepage": "https://github.com/bayne/unload-message#readme",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
